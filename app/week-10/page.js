@@ -41,9 +41,17 @@ export default function Page() {
           <>
             <h1>Welcome, {user.displayName}</h1>
             <p>Your email: {user.email}</p>
+            <p>Your email: {user.uid}</p>
             <button onClick={handleLogout}>Logout</button>
             <br />
-            <Link href="week-9/shopping-list/">Go to Shopping List</Link>
+            <Link
+              href={{
+                pathname: "/week-10/shopping-list",
+                query: { uid: user.uid },
+              }}
+            >
+              Go to Shopping List
+            </Link>
           </>
         )}
       </div>
